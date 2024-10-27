@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb25pw5rngksf"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_md050"]
+[ext_resource type="Texture2D" uid="uid://6ccyh56ic68m" path="res://Screenshot 2024-10-27 at 11.03.12 AM.png" id="2_pvb4r"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_md050")
+
+[node name="Screenshot2024-10-27At11_03_12 am" type="Sprite2D" parent="."]
+position = Vector2(594, 334)
+texture = ExtResource("2_pvb4r")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 181.0
+offset_right = 539.0
+offset_bottom = 225.0
+scale = Vector2(3.15532, 9.54108)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Display" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+flat = true
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+flat = true
+
+[node name="Audio" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+flat = true
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
